@@ -1,6 +1,8 @@
 require './application'
 CrampPubsub::Application.initialize!
 
+Cramp::Websocket.backend = :thin
+
 # Development middlewares
 if CrampPubsub::Application.env == 'development'
   use AsyncRack::CommonLogger
